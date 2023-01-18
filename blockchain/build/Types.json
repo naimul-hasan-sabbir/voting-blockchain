@@ -1,0 +1,681 @@
+{
+  "contractName": "Types",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Suresh Konakanchi\",\"details\":\"All custom types that we have used in E-Voting will be declared here\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Types\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Types.sol\":\"Types\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Types.sol\":{\"keccak256\":\"0x93453dc2ac4a29caa0f69297ba6432dc6e55877de2d19e135a516626520172d5\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://4c7a20d44443d08660e11165b5e0b285152f4c7a456f1b848abcb0ae0b79d426\",\"dweb:/ipfs/QmYiSqrUR8VNiWZN1b9zepdMS7hSWGvzdkjFXx8SKvq6R3\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200c96700bd4fd37a98d846e7807267c1bb95afca0a39336b5d8aa0f5569fe72d964736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200c96700bd4fd37a98d846e7807267c1bb95afca0a39336b5d8aa0f5569fe72d964736f6c63430008110033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "243:951:1:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;243:951:1;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "243:951:1:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma experimental ABIEncoderV2;\r\npragma solidity >=0.4.25 <0.9.0;\r\n\r\n/**\r\n * @title Types\r\n * @author Suresh Konakanchi\r\n * @dev All custom types that we have used in E-Voting will be declared here\r\n */\r\nlibrary Types {\r\n    struct Voter {\r\n        uint256 nidNumber; // voter unique ID\r\n        string name;\r\n        uint8 age;\r\n        uint8 stateCode;\r\n        uint8 constituencyCode;\r\n        bool isAlive;\r\n        uint256 votedTo; // nid number of the candidate\r\n    }\r\n\r\n    struct Candidate {\r\n        // Note: If we can limit the length to a certain number of bytes,\r\n        // we can use one of bytes1 to bytes32 because they are much cheaper\r\n\r\n        string name;\r\n        string partyShortcut;\r\n        string partyFlag;\r\n        uint256 nominationNumber; // unique ID of candidate\r\n        uint8 stateCode;\r\n        uint8 constituencyCode;\r\n    }\r\n\r\n    struct Results {\r\n        string name;\r\n        string partyShortcut;\r\n        string partyFlag;\r\n        uint256 voteCount; // number of accumulated votes\r\n        uint256 nominationNumber; // unique ID of candidate\r\n        uint8 stateCode;\r\n        uint8 constituencyCode;\r\n    }\r\n}\r\n",
+  "sourcePath": "G:\\VotingSystem_V1\\sample-e-voting-system-ethereum\\blockchain\\contracts\\Types.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Types.sol",
+    "exportedSymbols": {
+      "Types": [
+        813
+      ]
+    },
+    "id": 814,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 767,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:33:1"
+      },
+      {
+        "id": 768,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "72:32:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Types",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 769,
+          "nodeType": "StructuredDocumentation",
+          "src": "108:133:1",
+          "text": " @title Types\n @author Suresh Konakanchi\n @dev All custom types that we have used in E-Voting will be declared here"
+        },
+        "fullyImplemented": true,
+        "id": 813,
+        "linearizedBaseContracts": [
+          813
+        ],
+        "name": "Types",
+        "nameLocation": "251:5:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Types.Voter",
+            "id": 784,
+            "members": [
+              {
+                "constant": false,
+                "id": 771,
+                "mutability": "mutable",
+                "name": "nidNumber",
+                "nameLocation": "296:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "288:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 770,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "288:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 773,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "342:4:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "335:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 772,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "335:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 775,
+                "mutability": "mutable",
+                "name": "age",
+                "nameLocation": "363:3:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "357:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 774,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "357:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 777,
+                "mutability": "mutable",
+                "name": "stateCode",
+                "nameLocation": "383:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "377:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 776,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "377:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 779,
+                "mutability": "mutable",
+                "name": "constituencyCode",
+                "nameLocation": "409:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "403:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 778,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "403:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 781,
+                "mutability": "mutable",
+                "name": "isAlive",
+                "nameLocation": "441:7:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "436:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 780,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "436:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 783,
+                "mutability": "mutable",
+                "name": "votedTo",
+                "nameLocation": "467:7:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 784,
+                "src": "459:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 782,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "459:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Voter",
+            "nameLocation": "271:5:1",
+            "nodeType": "StructDefinition",
+            "scope": 813,
+            "src": "264:249:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Types.Candidate",
+            "id": 797,
+            "members": [
+              {
+                "constant": false,
+                "id": 786,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "711:4:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "704:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 785,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "704:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 788,
+                "mutability": "mutable",
+                "name": "partyShortcut",
+                "nameLocation": "733:13:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "726:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 787,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "726:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 790,
+                "mutability": "mutable",
+                "name": "partyFlag",
+                "nameLocation": "764:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "757:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 789,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "757:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 792,
+                "mutability": "mutable",
+                "name": "nominationNumber",
+                "nameLocation": "792:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "784:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 791,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "784:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 794,
+                "mutability": "mutable",
+                "name": "stateCode",
+                "nameLocation": "851:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "845:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 793,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "845:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 796,
+                "mutability": "mutable",
+                "name": "constituencyCode",
+                "nameLocation": "877:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 797,
+                "src": "871:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 795,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "871:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Candidate",
+            "nameLocation": "528:9:1",
+            "nodeType": "StructDefinition",
+            "scope": 813,
+            "src": "521:380:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Types.Results",
+            "id": 812,
+            "members": [
+              {
+                "constant": false,
+                "id": 799,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "942:4:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "935:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 798,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "935:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 801,
+                "mutability": "mutable",
+                "name": "partyShortcut",
+                "nameLocation": "964:13:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "957:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 800,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "957:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 803,
+                "mutability": "mutable",
+                "name": "partyFlag",
+                "nameLocation": "995:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "988:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 802,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "988:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 805,
+                "mutability": "mutable",
+                "name": "voteCount",
+                "nameLocation": "1023:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "1015:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 804,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1015:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 807,
+                "mutability": "mutable",
+                "name": "nominationNumber",
+                "nameLocation": "1082:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "1074:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 806,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1074:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 809,
+                "mutability": "mutable",
+                "name": "stateCode",
+                "nameLocation": "1141:9:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "1135:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 808,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1135:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 811,
+                "mutability": "mutable",
+                "name": "constituencyCode",
+                "nameLocation": "1167:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "1161:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 810,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1161:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Results",
+            "nameLocation": "916:7:1",
+            "nodeType": "StructDefinition",
+            "scope": 813,
+            "src": "909:282:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 814,
+        "src": "243:951:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:1159:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x2Db6B057879313380Ff3cdD12fA5CDCe65Aa5042",
+      "transactionHash": "0xe6ee3a5735e6b9a11bec8ec50ee0cac814add6ea19502266877fa2544eb24759"
+    }
+  },
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2023-01-16T16:58:00.979Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Suresh Konakanchi",
+    "details": "All custom types that we have used in E-Voting will be declared here",
+    "kind": "dev",
+    "methods": {},
+    "title": "Types",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
